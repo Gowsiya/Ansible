@@ -4,7 +4,7 @@
   tasks:
   - name: ping the ansible server
     ansible.builtin.ping:
-  - name: print hello world
+  - name: print hello world from ansible server
     ansible.builtin.debug:
     msg: "Hello, World from ansible server"
   
@@ -29,7 +29,7 @@
   tasks:
   - name: ping the ansible node
     ansible.builtin.ping:
-  - name: print hello world
+  - name: print hello world from ansible node
     ansible.builtin.debug:
     msg: "Hello, World from ansible node"
 
