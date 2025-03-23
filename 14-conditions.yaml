@@ -1,17 +1,33 @@
+# - name: check value greater than 10 or not
+#   hosts: local
+#   connection: local
+#   vars_prompt:
+#     - name: my_number
+#       prompt: Enter the value
+#       private: false
+#   tasks:
+#   - name: print if number greater than 10
+#     ansible.builtin.debug:
+#      msg: "Given number {{ my_number }} is greater than 10"
+#     when: my_number | int > 10
+  
+#   - name: print if number is less than or equal to 10
+#     ansible.builtin.debug:
+#       msg: "Given number {{ my_number }} is less than or equal to 10"
+#     when: my_number | int <= 10
+
 - name: check value greater than 10 or not
   hosts: local
   connection: local
-  vars_prompt:
-    - name: my_number
-      prompt: Enter the value
-      private: false
+  vars:
+    my_number: 20
   tasks:
   - name: print if number greater than 10
     ansible.builtin.debug:
      msg: "Given number {{ my_number }} is greater than 10"
-    when: my_number | int > 10
+    when: my_number > 10
   
   - name: print if number is less than or equal to 10
     ansible.builtin.debug:
       msg: "Given number {{ my_number }} is less than or equal to 10"
-    when: my_number | int <= 10
+    when: my_number <= 10
