@@ -11,7 +11,7 @@
 
 - name: install nginx on ansible server
   hosts: local
-  connection: yes
+  connection: local
   become: yes
   tasks:
   - name: install nginx
