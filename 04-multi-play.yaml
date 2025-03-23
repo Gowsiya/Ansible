@@ -1,6 +1,6 @@
 - name: PING
   hosts: local
-  connection: local
+  connection: local # managing its own node, no need of credentials
   tasks:
   - name: ping the ansible server
     ansible.builtin.ping:
