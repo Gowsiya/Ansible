@@ -1,0 +1,48 @@
+- name: PING
+  hosts: local
+  connection: local
+  tasks:
+  - name: ping the ansible server
+    ansible.bultin.ping:
+  - name: print hello world
+    ansible.builtin.debug:
+    msg: "Hello, World from ansible server"
+  
+
+- name: install nginx on ansible server
+  hosts: local
+  connection: yes
+  become: yes
+  tasks:
+  - name: install nginx
+    ansible.builtin.package
+      name: nginx
+      state: present
+  - name: start and enable nginx
+    ansible.builtin.service
+      name: nginx
+      state: started
+      enable: yes
+
+- name: ping
+  hosts: web
+  tasks:
+  - name: ping the ansible node
+    ansible.builtin.ping:
+  - name: print hello world
+    ansible.builtin.debug:
+    msg: "Hello, World from ansible node"
+
+- name: install nginx on ansible node
+  hosts: web
+  become: yes
+  tasks:
+  - name: install nginx
+    ansible.builtin.package:
+      name: nginx
+      state: present
+  - name: start the nginx
+    ansible.builtin.service
+      name: nginx
+      state: started
+      enabled: yes
