@@ -40,7 +40,7 @@
    vars:
      name: "Gowsiya"
    ansible.builtin.debug:
-      msg: "Hello {{ name | upper }}"
+    msg: "Hello {{ name | upper }}"
 
   - name: print min and max
     vars:
