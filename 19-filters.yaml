@@ -45,7 +45,7 @@
   - name: print min and max
     vars:
       numbers: [2,30,40,50,60,6678]
-    anible.builtin.debug:
+    ansible.builtin.debug:
       msg: "Min is: {{ numbers | min }}, Max is: {{ numbers | max }}"
   
   - name: check ipaddress is valid or not
