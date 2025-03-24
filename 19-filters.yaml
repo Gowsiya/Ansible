@@ -37,9 +37,9 @@
       msg: "Hello {{ name | lower }}"
  
  - name: convert lower to upper
-    vars:
+   vars:
      name: "Gowsiya"
-     ansible.builtin.debug:
+    ansible.builtin.debug:
       msg: "Hello {{ name | upper }}"
 
   - name: print min and max
@@ -53,4 +53,4 @@
       ip: 2434.234.234.243
     ansible.builtin.debug
       msg: "{{ ip | ansible.utils.ipaddr }}"
-      
+
