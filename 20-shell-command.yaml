@@ -6,10 +6,13 @@
     ansible.builtin.command: ls
   # - name: execute ls command and redirect the output
   #   ansible.builtin.command: ls -ltr > /tmp/output.txt
+  
   - name: execute ls command and redirect the output in shell module
     ansible.builtin.shell: ls -ltr > /tmp/output.txt
+  
   - name: run the command take the register the output in a varaiable
-    ansible.builtin.command: ls -ltr
+    # ansible.builtin.command: ls -ltr
+    ansible.builtin.command: ls -ltrrr
     register: command_result
   
   - name: print the output
