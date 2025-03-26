@@ -39,4 +39,4 @@
       msg: "{{ item.item }}: {{ item.instances[1].private_ip_address }}"
     loop: "{{ec2_info.results}}"
 
-"msg": "frontend: 172.31.10.4"
+# "msg": "frontend: 172.31.10.4"
